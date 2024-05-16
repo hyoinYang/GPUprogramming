@@ -17,12 +17,12 @@ using namespace std;
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
-void processInput(GLFWwindow *window);
-unsigned int loadTexture(const char *path);
+void processInput(GLFWwindow* window);
+unsigned int loadTexture(const char* path);
 
 // settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1200;
+const unsigned int SCR_HEIGHT = 900;
 
 // camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
@@ -77,9 +77,9 @@ int main()
     glEnable(GL_DEPTH_TEST);
 
 
-     // build and compile shaders
-    // -------------------------
-    //Shader shader("shader/wall.vs", "shader/wall.fs", "shader/wall.gs");
+    // build and compile shaders
+   // -------------------------
+   //Shader shader("shader/wall.vs", "shader/wall.fs", "shader/wall.gs");
     Shader shader("shader/wall.vs", "shader/wall.fs");
     //Shader shaderSingleColor("shader/3.1.blending.vs", "shader/2.stencil_single_color.fs");
 
@@ -230,7 +230,200 @@ int main()
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // set up vertex data (and buffer(s)) and configure vertex attributes
+    // ------------------------------------------------------------------
+    float classplaneVertices[] = {
+        // positions          // texture Coords 
+        -5.0f, -1.0f, 4.0f,  20.0f, 0.0f,
+        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -9.0f, -1.0f, 0.0f,  0.0f, 20.0,
+        -5.0f, -1.0f, 4.0f,  20.0, 0.0f,
+        -9.0f, -1.0f, 0.0f,  0.0f, 20.0,
+        -5.0f, -1.0f, 0.0f,  20.0, 20.0
+    };
+
+    // Front wall vertices
+    float classwallFrontVertices[] = {
+        // positions          // texture Coords 
+        // Front face
+        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -5.0f, -1.0f, 4.0f,  10.0f, 0.0f,
+        -5.0f,  1.0f, 4.0f,  10.0f, 10.0f,
+        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -5.0f,  1.0f, 4.0f,  10.0f, 10.0f,
+        -9.0f,  1.0f, 4.0f,  0.0f, 10.0f
+    };
+
+    // Right wall vertices
+    float classwallRightVertices[] = {
+        // positions          // texture Coords 
+        // Right face
+        -5.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -5.0f, -1.0f, 0.0f,  10.0f, 0.0f,
+        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
+        -5.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
+        -5.0f,  1.0f, 4.0f,  0.0f, 10.0f
+    };
+
+    // Left wall vertices
+    float classwallLeftVertices[] = {
+        // positions          // texture Coords 
+        // Left face
+        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -9.0f, -1.0f, 4.0f,  10.0f, 0.0f,
+        -9.0f,  1.0f, 4.0f,  10.0f, 10.0f,
+        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -9.0f,  1.0f, 4.0f,  10.0f, 10.0f,
+        -9.0f,  1.0f, 0.0f,  0.0f, 10.0f
+    };
+
+    // Back wall vertices
+    float classwallBackVertices[] = {
+        // positions          // texture Coords 
+        // Back face
+        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -5.0f, -1.0f, 0.0f,  10.0f, 0.0f,
+        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
+        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
+        -9.0f,  1.0f, 0.0f,  0.0f, 10.0f
+    };
+
+    // Ceiling vertices
+    float classceilingVertices[] = {
+        // positions          // texture Coords 
+        -5.0f,  1.0f, 4.0f,  5.0f, 5.0f,
+        -9.0f,  1.0f, 4.0f,  0.0f, 5.0f,
+        -9.0f,  1.0f, 0.0f,  0.0f, 0.0f,
+        -5.0f,  1.0f, 4.0f,  5.0f, 5.0f,
+        -9.0f,  1.0f, 0.0f,  0.0f, 0.0f,
+        -5.0f,  1.0f, 0.0f,  5.0f, 0.0f
+    };
+
+
+
+    // plane VAO
+    unsigned int classplaneVAO, classplaneVBO;
+    glGenVertexArrays(1, &classplaneVAO);
+    glGenBuffers(1, &classplaneVBO);
+    glBindVertexArray(classplaneVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classplaneVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classplaneVertices), &classplaneVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    // wallFront VAO
+    unsigned int classwallVAO, classwallVBO;
+    glGenVertexArrays(1, &classwallVAO);
+    glGenBuffers(1, &classwallVBO);
+    glBindVertexArray(classwallVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classwallVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classwallFrontVertices), classwallFrontVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    // Right wall VAO
+    unsigned int classwallRightVAO, classwallRightVBO;
+    glGenVertexArrays(1, &classwallRightVAO);
+    glGenBuffers(1, &classwallRightVBO);
+    glBindVertexArray(classwallRightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classwallRightVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classwallRightVertices), classwallRightVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    // Left wall VAO
+    unsigned int classwallLeftVAO, classwallLeftVBO;
+    glGenVertexArrays(1, &classwallLeftVAO);
+    glGenBuffers(1, &classwallLeftVBO);
+    glBindVertexArray(classwallLeftVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classwallLeftVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classwallLeftVertices), classwallLeftVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    // Back wall VAO
+    unsigned int classwallBackVAO, classwallBackVBO;
+    glGenVertexArrays(1, &classwallBackVAO);
+    glGenBuffers(1, &classwallBackVBO);
+    glBindVertexArray(classwallBackVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classwallBackVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classwallBackVertices), classwallBackVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+    // Ceiling VAO
+    unsigned int classceilingVAO, classceilingVBO;
+    glGenVertexArrays(1, &classceilingVAO);
+    glGenBuffers(1, &classceilingVBO);
+    glBindVertexArray(classceilingVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, classceilingVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(classceilingVertices), classceilingVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+
+
+
+    // door vertices
+    float doorVertices[] = {
+        // positions          // texture Coords 
+        // Back face
+        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
+         5.0f, -1.0f, -5.0f,  10.0f, 0.0f,
+         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
+        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
+         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
+        -5.0f,  1.0f, -5.0f,  0.0f, 10.0f
+    };
     
+    // door VAO
+    unsigned int doorVAO, doorVBO;
+    glGenVertexArrays(1, &doorVAO);
+    glGenBuffers(1, &doorVBO);
+    glBindVertexArray(doorVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, doorVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(doorVertices), doorVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    
+
+
+
+
+
+
+
+
     // load textures
     // -------------
     unsigned int floorTexture = loadTexture("resources/textures/floor.png");
@@ -239,13 +432,13 @@ int main()
 
     // transparent object locations
     // --------------------------------
-    vector<glm::vec3> trasparentObject 
+    vector<glm::vec3> trasparentObject
     {
         glm::vec3(-1.5f, 0.0f, -0.48f),
-        glm::vec3( 1.5f, 0.0f, 0.51f),
-        glm::vec3( 0.0f, 0.0f, 0.7f),
+        glm::vec3(1.5f, 0.0f, 0.51f),
+        glm::vec3(0.0f, 0.0f, 0.7f),
         glm::vec3(-0.3f, 0.0f, -2.3f),
-        glm::vec3 (0.5f, 0.0f, -0.6f)
+        glm::vec3(0.5f, 0.0f, -0.6f)
     };
 
     // shader configuration
@@ -276,7 +469,7 @@ int main()
         glm::mat4 model = glm::mat4(1.0f);
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-     
+
 
         shader.use();
         shader.setMat4("view", view);
@@ -323,6 +516,58 @@ int main()
         glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
 
+
+        // floor
+        glBindVertexArray(classplaneVAO);
+        glBindTexture(GL_TEXTURE_2D, floorTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        // wall
+        glBindVertexArray(classwallVAO);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glBindVertexArray(classwallRightVAO);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glBindVertexArray(classwallLeftVAO);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glBindVertexArray(classwallBackVAO);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        // ceiling
+        glBindVertexArray(classceilingVAO);
+        glBindTexture(GL_TEXTURE_2D, ceilingTexture);
+        shader.setMat4("model", glm::mat4(1.0f));
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+
+
+
+
+
+
+
+
+
+
+
+
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
@@ -332,7 +577,7 @@ int main()
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &planeVAO);
-    
+
     glDeleteBuffers(1, &planeVBO);
 
     glfwTerminate();
@@ -341,7 +586,7 @@ int main()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
+void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
@@ -398,13 +643,13 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int loadTexture(char const * path)
+unsigned int loadTexture(char const* path)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
 
     int width, height, nrComponents;
-    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
     if (data)
     {
         GLenum format;
@@ -420,7 +665,7 @@ unsigned int loadTexture(char const * path)
         glGenerateMipmap(GL_TEXTURE_2D);
 
         /*
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT); // for this tutorial: use GL_CLAMP_TO_EDGE to prevent semi-transparent borders. Due to interpolation it takes texels from next repeat 
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT); // for this tutorial: use GL_CLAMP_TO_EDGE to prevent semi-transparent borders. Due to interpolation it takes texels from next repeat
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, format == GL_RGBA ? GL_CLAMP_TO_EDGE : GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

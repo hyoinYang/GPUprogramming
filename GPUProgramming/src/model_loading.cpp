@@ -88,73 +88,73 @@ int main()
     // ------------------------------------------------------------------
     float planeVertices[] = {
         // positions          // texture Coords 
-         5.0f, -1.0f,  5.0f,  20.0f, 0.0f,
-        -5.0f, -1.0f,  5.0f,  0.0f, 0.0f,
-        -5.0f, -1.0f, -5.0f,  0.0f, 20.0,
+         7.5f, -1.0f,  7.5f,  20.0f, 0.0f,
+        -7.5f, -1.0f,  7.5f,  0.0f, 0.0f,
+        -7.5f, -1.0f, -7.5f,  0.0f, 20.0,
 
-         5.0f, -1.0f,  5.0f,  20.0, 0.0f,
-        -5.0f, -1.0f, -5.0f,  0.0f, 20.0,
-         5.0f, -1.0f, -5.0f,  20.0, 20.0
+         7.5f, -1.0f,  7.5f,  20.0, 0.0f,
+        -7.5f, -1.0f, -7.5f,  0.0f, 20.0,
+         7.5f, -1.0f, -7.5f,  20.0, 20.0
     };
 
     // Front wall vertices
     float wallFrontVertices[] = {
         // positions          // texture Coords 
         // Front face
-        -5.0f, -1.0f,  5.0f,  0.0f, 0.0f,
-         5.0f, -1.0f,  5.0f,  10.0f, 0.0f,
-         5.0f,  1.0f,  5.0f,  10.0f, 10.0f,
-        -5.0f, -1.0f,  5.0f,  0.0f, 0.0f,
-         5.0f,  1.0f,  5.0f,  10.0f, 10.0f,
-        -5.0f,  1.0f,  5.0f,  0.0f, 10.0f
+        -7.5f, -1.0f,  7.5f,  0.0f, 0.0f,
+         7.5f, -1.0f,  7.5f,  10.0f, 0.0f,
+         7.5f,  2.0f,  7.5f,  10.0f, 10.0f,
+        -7.5f, -1.0f,  7.5f,  0.0f, 0.0f,
+         7.5f,  2.0f,  7.5f,  10.0f, 10.0f,
+        -7.5f,  2.0f,  7.5f,  0.0f, 10.0f
     };
 
     // Right wall vertices
     float wallRightVertices[] = {
         // positions          // texture Coords 
         // Right face
-         5.0f, -1.0f,  5.0f,  0.0f, 0.0f,
-         5.0f, -1.0f, -5.0f,  10.0f, 0.0f,
-         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
-         5.0f, -1.0f,  5.0f,  0.0f, 0.0f,
-         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
-         5.0f,  1.0f,  5.0f,  0.0f, 10.0f
+         7.5f, -1.0f,  7.5f,  0.0f, 0.0f,
+         7.5f, -1.0f, -7.5f,  10.0f, 0.0f,
+         7.5f,  2.0f, -7.5f,  10.0f, 10.0f,
+         7.5f, -1.0f,  7.5f,  0.0f, 0.0f,
+         7.5f,  2.0f, -7.5f,  10.0f, 10.0f,
+         7.5f,  2.0f,  7.5f,  0.0f, 10.0f
     };
 
     // Left wall vertices
     float wallLeftVertices[] = {
         // positions          // texture Coords 
         // Left face
-        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
-        -5.0f, -1.0f,  5.0f,  10.0f, 0.0f,
-        -5.0f,  1.0f,  5.0f,  10.0f, 10.0f,
-        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f,  5.0f,  10.0f, 10.0f,
-        -5.0f,  1.0f, -5.0f,  0.0f, 10.0f
+        -7.5f, -1.0f, -7.5f,  0.0f, 0.0f,
+        -7.5f, -1.0f,  7.5f,  10.0f, 0.0f,
+        -7.5f,  2.0f,  7.5f,  10.0f, 10.0f,
+        -7.5f, -1.0f, -7.5f,  0.0f, 0.0f,
+        -7.5f,  2.0f,  7.5f,  10.0f, 10.0f,
+        -7.5f,  2.0f, -7.5f,  0.0f, 10.0f
     };
 
     // Back wall vertices
     float wallBackVertices[] = {
         // positions          // texture Coords 
         // Back face
-        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
-         5.0f, -1.0f, -5.0f,  10.0f, 0.0f,
-         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
-        -5.0f, -1.0f, -5.0f,  0.0f, 0.0f,
-         5.0f,  1.0f, -5.0f,  10.0f, 10.0f,
-        -5.0f,  1.0f, -5.0f,  0.0f, 10.0f
+        -7.5f, -1.0f, -7.5f,  0.0f, 0.0f,
+         7.5f, -1.0f, -7.5f,  10.0f, 0.0f,
+         7.5f,  2.0f, -7.5f,  10.0f, 10.0f,
+        -7.5f, -1.0f, -7.5f,  0.0f, 0.0f,
+         7.5f,  2.0f, -7.5f,  10.0f, 10.0f,
+        -7.5f,  2.0f, -7.5f,  0.0f, 10.0f
     };
 
     // Ceiling vertices
     float ceilingVertices[] = {
         // positions          // texture Coords 
-         5.0f,  1.0f,  5.0f,  5.0f, 5.0f,
-        -5.0f,  1.0f,  5.0f,  0.0f, 5.0f,
-        -5.0f,  1.0f, -5.0f,  0.0f, 0.0f,
+         7.5f,  2.0f,  7.5f,  5.0f, 5.0f,
+        -7.5f,  2.0f,  7.5f,  0.0f, 5.0f,
+        -7.5f,  2.0f, -7.5f,  0.0f, 0.0f,
 
-         5.0f,  1.0f,  5.0f,  5.0f, 5.0f,
-        -5.0f,  1.0f, -5.0f,  0.0f, 0.0f,
-         5.0f,  1.0f, -5.0f,  5.0f, 0.0f
+         7.5f,  2.0f,  7.5f,  5.0f, 5.0f,
+        -7.5f,  2.0f, -7.5f,  0.0f, 0.0f,
+         7.5f,  2.0f, -7.5f,  5.0f, 0.0f
     };
 
     // plane VAO
@@ -235,71 +235,71 @@ int main()
     // ------------------------------------------------------------------
     float classplaneVertices[] = {
         // positions          // texture Coords 
-        -5.0f, -1.0f, 4.0f,  20.0f, 0.0f,
-        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
-        -9.0f, -1.0f, 0.0f,  0.0f, 20.0,
-        -5.0f, -1.0f, 4.0f,  20.0, 0.0f,
-        -9.0f, -1.0f, 0.0f,  0.0f, 20.0,
-        -5.0f, -1.0f, 0.0f,  20.0, 20.0
+        -7.5f, -1.0f,  6.0f,  20.0f, 20.0f,
+        -11.0f, -1.0f,  6.0f,  0.0f, 20.0f,
+        -11.0f, -1.0f,  0.0f,  0.0f,  0.0f,
+        -7.5f, -1.0f,  6.0f,  20.0f, 20.0f,
+        -11.0f, -1.0f,  0.0f,  0.0f,  0.0f,
+        -7.5f, -1.0f,  0.0f,  20.0f,  0.0f
     };
 
     // Front wall vertices
     float classwallFrontVertices[] = {
         // positions          // texture Coords 
         // Front face
-        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
-        -5.0f, -1.0f, 4.0f,  10.0f, 0.0f,
-        -5.0f,  1.0f, 4.0f,  10.0f, 10.0f,
-        -9.0f, -1.0f, 4.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f, 4.0f,  10.0f, 10.0f,
-        -9.0f,  1.0f, 4.0f,  0.0f, 10.0f
+        -11.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -7.5f, -1.0f, 4.0f,  10.0f, 0.0f,
+        -7.5f,  2.0f, 4.0f,  10.0f, 10.0f,
+        -11.0f, -1.0f, 4.0f,  0.0f, 0.0f,
+        -7.5f,  2.0f, 4.0f,  10.0f, 10.0f,
+        -11.0f,  2.0f, 4.0f,  0.0f, 10.0f
     };
 
     // Right wall vertices
     float classwallRightVertices[] = {
         // positions          // texture Coords 
         // Right face
-        -5.0f, -1.0f, 4.0f,  0.0f, 0.0f,
-        -5.0f, -1.0f, 0.0f,  10.0f, 0.0f,
-        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
-        -5.0f, -1.0f, 4.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
-        -5.0f,  1.0f, 4.0f,  0.0f, 10.0f
+        -7.5f, -1.0f, 6.0f,  0.0f, 0.0f,
+        -7.5f, -1.0f, 0.0f,  10.0f, 0.0f,
+        -7.5f,  2.0f, 0.0f,  10.0f, 10.0f,
+        -7.5f, -1.0f, 6.0f,  0.0f, 0.0f,
+        -7.5f,  2.0f, 0.0f,  10.0f, 10.0f,
+        -7.5f,  2.0f, 6.0f,  0.0f, 10.0f
     };
 
     // Left wall vertices
     float classwallLeftVertices[] = {
         // positions          // texture Coords 
         // Left face
-        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
-        -9.0f, -1.0f, 4.0f,  10.0f, 0.0f,
-        -9.0f,  1.0f, 4.0f,  10.0f, 10.0f,
-        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
-        -9.0f,  1.0f, 4.0f,  10.0f, 10.0f,
-        -9.0f,  1.0f, 0.0f,  0.0f, 10.0f
+        -11.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -11.0f, -1.0f, 6.0f,  10.0f, 0.0f,
+        -11.0f,  2.0f, 6.0f,  10.0f, 10.0f,
+        -11.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -11.0f,  2.0f, 6.0f,  10.0f, 10.0f,
+        -11.0f,  2.0f, 0.0f,  0.0f, 10.0f
     };
 
     // Back wall vertices
     float classwallBackVertices[] = {
         // positions          // texture Coords 
         // Back face
-        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
-        -5.0f, -1.0f, 0.0f,  10.0f, 0.0f,
-        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
-        -9.0f, -1.0f, 0.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f, 0.0f,  10.0f, 10.0f,
-        -9.0f,  1.0f, 0.0f,  0.0f, 10.0f
+        -11.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -7.5f, -1.0f, 0.0f,  10.0f, 0.0f,
+        -7.5f,  2.0f, 0.0f,  10.0f, 10.0f,
+        -11.0f, -1.0f, 0.0f,  0.0f, 0.0f,
+        -7.5f,  2.0f, 0.0f,  10.0f, 10.0f,
+        -11.0f,  2.0f, 0.0f,  0.0f, 10.0f
     };
 
     // Ceiling vertices
     float classceilingVertices[] = {
         // positions          // texture Coords 
-        -5.0f,  1.0f, 4.0f,  5.0f, 5.0f,
-        -9.0f,  1.0f, 4.0f,  0.0f, 5.0f,
-        -9.0f,  1.0f, 0.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f, 4.0f,  5.0f, 5.0f,
-        -9.0f,  1.0f, 0.0f,  0.0f, 0.0f,
-        -5.0f,  1.0f, 0.0f,  5.0f, 0.0f
+        -7.5f,  2.0f, 6.0f,  5.0f, 5.0f,
+        -11.0f,  2.0f, 4.0f,  0.0f, 5.0f,
+        -11.0f,  2.0f, 0.0f,  0.0f, 0.0f,
+        -7.5f,  2.0f, 6.0f,  5.0f, 5.0f,
+        -11.0f,  2.0f, 0.0f,  0.0f, 0.0f,
+        -7.5f,  2.0f, 0.0f,  5.0f, 0.0f
     };
 
     // plane VAO
@@ -437,8 +437,8 @@ int main()
         // render the loaded model
 
         glm::mat4 model_door = glm::mat4(1.0f);
-        model_door = glm::translate(model_door, glm::vec3(-5.1f, -0.3f, 3.5f)); // translate it down so it's at the center of the scene
-        model_door = glm::scale(model_door, glm::vec3(0.017f, 0.017f, 0.017f));	// it's a bit too big for our scene, so scale it down
+        model_door = glm::translate(model_door, glm::vec3(-7.55f, -0.13f, 3.5f)); // translate it down so it's at the center of the scene
+        model_door = glm::scale(model_door, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
         model_door = glm::rotate(model_door, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
         model_door = glm::rotate(model_door, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
         ourShader.setMat4("model", model_door);
@@ -446,7 +446,7 @@ int main()
 
 
         glm::mat4 model_whiteboard = glm::mat4(1.0f);
-        model_whiteboard = glm::translate(model_whiteboard, glm::vec3(-7.0f, 0.7f, 0.1f)); // translate it down so it's at the center of the scene
+        model_whiteboard = glm::translate(model_whiteboard, glm::vec3(-9.0f, 0.7f, 0.0f)); // translate it down so it's at the center of the scene
         model_whiteboard = glm::scale(model_whiteboard, glm::vec3(0.02f, 0.02f, 0.02f));	// it's a bit too big for our scene, so scale it down
         //model_whiteboard = glm::rotate(model_whiteboard, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
         ourShader.setMat4("model", model_whiteboard);
@@ -462,14 +462,14 @@ int main()
         */
 
         glm::mat4 model_computer = glm::mat4(1.0f);
-        model_computer = glm::translate(model_computer, glm::vec3(-7.0f, -0.45f, 2.0f)); // translate it down so it's at the center of the scene
+        model_computer = glm::translate(model_computer, glm::vec3(-9.0f, -0.45f, 4.0f)); // translate it down so it's at the center of the scene
         model_computer = glm::scale(model_computer, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
         //model_computer = glm::rotate(model_computer, glm::radians(0.0f), glm::vec3(0.0, 0.0, 0.0));
         ourShader.setMat4("model", model_computer);
         computer.Draw(ourShader);
 
         glm::mat4 model_table = glm::mat4(1.0f);
-        model_table = glm::translate(model_table, glm::vec3(-7.0f, -1.0f, 2.0f));  // translate it down so it's at the center of the scene
+        model_table = glm::translate(model_table, glm::vec3(-9.0f, -1.0f, 4.0f));  // translate it down so it's at the center of the scene
         model_table = glm::scale(model_table, glm::vec3(0.8f, 0.8f, 0.8f));	 // it's a bit too big for our scene, so scale it down
         model_table = glm::rotate(model_table, glm::radians(90.0f), glm::vec3(-1.0, 0.0, 0.0));
         model_table = glm::rotate(model_table, glm::radians(90.0f), glm::vec3(0.0, 0.0, -1.0));
@@ -477,7 +477,7 @@ int main()
         table.Draw(ourShader);
 
         glm::mat4 model_chair = glm::mat4(1.0f);
-        model_chair = glm::translate(model_chair, glm::vec3(-7.0f, -0.7f, 2.2f)); // translate it down so it's at the center of the scene
+        model_chair = glm::translate(model_chair, glm::vec3(-9.0f, -0.7f, 4.2f)); // translate it down so it's at the center of the scene
         model_chair = glm::scale(model_chair, glm::vec3(0.3f, 0.3f, 0.3f));	// it's a bit too big for our scene, so scale it down
         model_chair = glm::rotate(model_chair, glm::radians(180.0f), glm::vec3(0.0, 1.0, 0.0));
         ourShader.setMat4("model", model_chair);

@@ -394,6 +394,11 @@ int main()
     Model clock("resources/clock/scene.gltf");
     Model table("resources/table/scene.gltf");
     Model chair("resources/chair/scene.gltf");
+    Model smallTree("resources/pot/scene.gltf");
+    Model glass_window ("resources/glass_window/scene.gltf");
+    Model diner_door("resources/diner_door/scene.gltf");
+    Model tree("resources/bamboo_with_plant_pot/scene.gltf");
+    Model schoolLock("resources/school_locker/scene.gltf");
 
     // render loop
     // -----------
@@ -414,7 +419,7 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // don't forget to clear the stencil buffer!
 
-        // 모델 그리기
+        // -------------------------- 모델 그리기 ----------------------------
 
         ourShader.use();
 
@@ -434,16 +439,162 @@ int main()
         door.Draw(ourShader);
         */
      
-        // render the loaded model
+        // ------------ 복도 모델 ----------------
 
         glm::mat4 model_door = glm::mat4(1.0f);
-        model_door = glm::translate(model_door, glm::vec3(-7.55f, -0.13f, 3.5f)); // translate it down so it's at the center of the scene
+        model_door = glm::translate(model_door, glm::vec3(-7.55f, -0.05f, 5.0f)); // translate it down so it's at the center of the scene
         model_door = glm::scale(model_door, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
         model_door = glm::rotate(model_door, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
         model_door = glm::rotate(model_door, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
         ourShader.setMat4("model", model_door);
         door.Draw(ourShader);
 
+        glm::mat4 model_door_front = glm::mat4(1.0f);
+        model_door_front = glm::translate(model_door_front, glm::vec3(-7.55f, -0.05f, 1.0f)); // translate it down so it's at the center of the scene
+        model_door_front = glm::scale(model_door_front, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        model_door_front = glm::rotate(model_door_front, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        model_door_front = glm::rotate(model_door_front, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", model_door_front);
+        door.Draw(ourShader);
+
+        glm::mat4 door_1 = glm::mat4(1.0f);
+        door_1 = glm::translate(door_1, glm::vec3(-7.55f, -0.05f, 6.75f)); // translate it down so it's at the center of the scene
+        door_1 = glm::scale(door_1, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_1 = glm::rotate(door_1, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_1 = glm::rotate(door_1, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_1);
+        door.Draw(ourShader);
+
+
+        glm::mat4 door_2 = glm::mat4(1.0f);
+        door_2 = glm::translate(door_2, glm::vec3(-7.55f, -0.05f, -1.0f)); // translate it down so it's at the center of the scene
+        door_2 = glm::scale(door_2, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_2 = glm::rotate(door_2, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_2 = glm::rotate(door_2, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_2);
+        door.Draw(ourShader);
+
+        glm::mat4 door_3 = glm::mat4(1.0f);
+        door_3 = glm::translate(door_3, glm::vec3(-7.55f, -0.05f, -6.0f)); // translate it down so it's at the center of the scene
+        door_3 = glm::scale(door_3, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_3 = glm::rotate(door_3, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_3 = glm::rotate(door_3, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_3);
+        door.Draw(ourShader);
+
+        glm::mat4 door_4 = glm::mat4(1.0f);
+        door_4 = glm::translate(door_4, glm::vec3(-5.0f, -0.05f, -7.0f)); // translate it down so it's at the center of the scene
+        door_4 = glm::scale(door_4, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_4 = glm::rotate(door_4, glm::radians(180.0f), glm::vec3(0.0, 1.0, 0.0));
+        //door_4 = glm::rotate(door_4, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_4 = glm::rotate(door_4, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_4);
+        door.Draw(ourShader);
+
+        glm::mat4 door_5 = glm::mat4(1.0f);
+        door_5 = glm::translate(door_5, glm::vec3(7.4f, -0.05f, -6.0f)); // translate it down so it's at the center of the scene
+        door_5 = glm::scale(door_5, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_5 = glm::rotate(door_5, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_5 = glm::rotate(door_5, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_5);
+        door.Draw(ourShader);
+
+        glm::mat4 door_6 = glm::mat4(1.0f);
+        door_6 = glm::translate(door_6, glm::vec3(7.4f, -0.05f, -1.0f)); // translate it down so it's at the center of the scene
+        door_6 = glm::scale(door_6, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_6 = glm::rotate(door_6, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_6 = glm::rotate(door_6, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_6);
+        door.Draw(ourShader);
+
+        glm::mat4 door_7 = glm::mat4(1.0f);
+        door_7 = glm::translate(door_7, glm::vec3(7.4f, -0.05f, 7.0f)); // translate it down so it's at the center of the scene
+        door_7 = glm::scale(door_7, glm::vec3(0.04f, 0.025f, 0.04f));	// it's a bit too big for our scene, so scale it down
+        door_7 = glm::rotate(door_7, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        door_7 = glm::rotate(door_7, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_7);
+        door.Draw(ourShader);
+
+
+        glm::mat4 door_208 = glm::mat4(1.0f);
+        door_208 = glm::translate(door_208, glm::vec3(4.0f, -1.0f, 7.55f)); // translate it down so it's at the center of the scene
+        door_208 = glm::scale(door_208, glm::vec3(0.015f, 0.01f, 0.025f));	// it's a bit too big for our scene, so scale it down
+        door_208 = glm::rotate(door_208, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+        door_208 = glm::rotate(door_208, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", door_208);
+        diner_door.Draw(ourShader);
+
+        glm::mat4 treePot = glm::mat4(1.0f);
+        treePot = glm::translate(treePot, glm::vec3(-2.0f, -1.0f, 2.0f)); // translate it down so it's at the center of the scene
+        treePot = glm::scale(treePot, glm::vec3(0.015f, 0.01f, 0.015f));	// it's a bit too big for our scene, so scale it down
+        //treePot = glm::rotate(treePot, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        treePot = glm::rotate(treePot, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        ourShader.setMat4("model", treePot);
+        tree.Draw(ourShader);
+
+        glm::mat4 smallTreePot = glm::mat4(1.0f);
+        smallTreePot = glm::translate(smallTreePot, glm::vec3(-2.0f, -1.0f, 2.0f));
+        smallTreePot = glm::scale(smallTreePot, glm::vec3(0.7f, 0.7f, 0.7f));
+        smallTreePot = glm::rotate(smallTreePot, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        ourShader.setMat4("model", smallTreePot);
+        smallTree.Draw(ourShader);
+
+        glm::mat4 locker_1 = glm::mat4(1.0f);
+        locker_1 = glm::translate(locker_1, glm::vec3(-1.5f, -0.1f, -3.25f));
+        locker_1 = glm::scale(locker_1, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_1 = glm::rotate(locker_1, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        locker_1 = glm::rotate(locker_1, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_1);
+        schoolLock.Draw(ourShader);
+
+        glm::mat4 locker_2 = glm::mat4(1.0f);
+        locker_2 = glm::translate(locker_2, glm::vec3(-1.5f, -0.1f, -2.0f));
+        locker_2 = glm::scale(locker_2, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_2 = glm::rotate(locker_2, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        locker_2 = glm::rotate(locker_2, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_2);
+        schoolLock.Draw(ourShader);
+
+        glm::mat4 locker_3 = glm::mat4(1.0f);
+        locker_3 = glm::translate(locker_3, glm::vec3(2.0f, -0.1f, -7.1f));
+        locker_3 = glm::scale(locker_3, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_3 = glm::rotate(locker_3, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        //locker_3 = glm::rotate(locker_3, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_3);
+        schoolLock.Draw(ourShader);
+
+        glm::mat4 locker_4 = glm::mat4(1.0f);
+        locker_4 = glm::translate(locker_4, glm::vec3(3.25f, -0.1f, -7.1f));
+        locker_4 = glm::scale(locker_4, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_4 = glm::rotate(locker_4, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        //locker_4 = glm::rotate(locker_4, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_4);
+        schoolLock.Draw(ourShader);
+
+
+        glm::mat4 locker_5 = glm::mat4(1.0f);
+        locker_5 = glm::translate(locker_5, glm::vec3(1.5f, -0.1f, 3.3f));
+        locker_5 = glm::scale(locker_5, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_5 = glm::rotate(locker_5, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        //locker_3 = glm::rotate(locker_3, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_5);
+        schoolLock.Draw(ourShader);
+
+        glm::mat4 locker_6 = glm::mat4(1.0f);
+        locker_6 = glm::translate(locker_6, glm::vec3(0.25f, -0.1f, 3.3f));
+        locker_6 = glm::scale(locker_6, glm::vec3(0.1f, 0.1f, 0.1f));
+        locker_6 = glm::rotate(locker_6, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+        //locker_4 = glm::rotate(locker_4, glm::radians(-90.0f), glm::vec3(0.0, 0.0, 1.0));
+        ourShader.setMat4("model", locker_6);
+        schoolLock.Draw(ourShader);
+
+
+        glm::mat4 window_1 = glm::mat4(1.0f);
+        window_1 = glm::translate(window_1, glm::vec3(7.0f, 0.0f, 2.0f)); // translate it down so it's at the center of the scene
+        window_1 = glm::scale(window_1, glm::vec3(3.0f, 3.0f, 3.0f));	// it's a bit too big for our scene, so scale it down
+        window_1 = glm::rotate(window_1, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        ourShader.setMat4("model", window_1);
+        glass_window.Draw(ourShader);
 
         glm::mat4 model_whiteboard = glm::mat4(1.0f);
         model_whiteboard = glm::translate(model_whiteboard, glm::vec3(-9.0f, 0.7f, 0.0f)); // translate it down so it's at the center of the scene
@@ -483,7 +634,7 @@ int main()
         ourShader.setMat4("model", model_chair);
         chair.Draw(ourShader);
       
-        // 복도 그리기
+        // -------------------- 복도 틀 그리기 --------------------
 
         shader.use();
         shader.setMat4("view", view);
@@ -569,6 +720,51 @@ int main()
         shader.setMat4("model", glm::mat4(1.0f));
         glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
+
+        glBindVertexArray(classwallBackVAO);
+        glBindTexture(GL_TEXTURE_2D, wallTexture);
+        shader.setMat4("model", glm::mat4(1.0f));        
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+       
+        glm::mat4 class210_front = glm::mat4(1.0f);
+        glBindVertexArray(classwallBackVAO);
+        class210_front = glm::translate(class210_front, glm::vec3(10.0f, 0.5f, 3.0f));  // translate it down so it's at the center of the scene
+        class210_front = glm::scale(class210_front, glm::vec3(1.0f, 0.8f, 0.8f));	 // it's a bit too big for our scene, so scale it down
+        class210_front = glm::rotate(class210_front, glm::radians(180.0f), glm::vec3(1.0, 0.0, 0.0));
+        shader.setMat4("model", class210_front);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glm::mat4 class210_back = glm::mat4(1.0f);
+        glBindVertexArray(classwallBackVAO);
+        class210_back = glm::translate(class210_back, glm::vec3(10.0f, 0.5f, -4.0f));  // translate it down so it's at the center of the scene
+        class210_back = glm::scale(class210_back, glm::vec3(1.0f, 0.8f, 0.8f));	 // it's a bit too big for our scene, so scale it down
+        class210_back = glm::rotate(class210_back, glm::radians(180.0f), glm::vec3(1.0, 0.0, 0.0));
+        shader.setMat4("model", class210_back);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glm::mat4 class210_right = glm::mat4(1.0f);
+        glBindVertexArray(classwallBackVAO);
+        class210_right = glm::translate(class210_right, glm::vec3(-1.0f, 0.6f, 18.0f));  // translate it down so it's at the center of the scene
+        class210_right = glm::scale(class210_right, glm::vec3(1.0f, 0.8f, 2.0f));	 // it's a bit too big for our scene, so scale it down
+        class210_right = glm::rotate(class210_right, glm::radians(180.0f), glm::vec3(1.0, 0.0, 0.0));
+        class210_right = glm::rotate(class210_right, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        shader.setMat4("model", class210_right);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+        glm::mat4 class210_left = glm::mat4(1.0f);
+        glBindVertexArray(classwallBackVAO);
+        class210_left = glm::translate(class210_left, glm::vec3(2.5f, 0.6f, 18.0f));  // translate it down so it's at the center of the scene
+        class210_left = glm::scale(class210_left, glm::vec3(1.0f, 0.8f, 2.0f));	 // it's a bit too big for our scene, so scale it down
+        class210_left = glm::rotate(class210_left, glm::radians(180.0f), glm::vec3(1.0, 0.0, 0.0));
+        class210_left = glm::rotate(class210_left, glm::radians(90.0f), glm::vec3(0.0, 1.0, 0.0));
+        shader.setMat4("model", class210_left);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
 
         /*
         // ceiling

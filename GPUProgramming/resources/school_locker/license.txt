@@ -1,0 +1,8 @@
+Model Information:
+* title:	Industrial - Locker
+* source:	https://sketchfab.com/3d-models/industrial-locker-1938d4d4c5bc440390159c7eb301c407
+* author:	Anfossi Valentin (https://sketchfab.com/lebiff)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

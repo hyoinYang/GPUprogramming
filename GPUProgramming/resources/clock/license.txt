@@ -1,11 +1,11 @@
 Model Information:
-* title:	Clock model
-* source:	https://sketchfab.com/3d-models/clock-model-a4de6d0954b44d8f8d738ba7d8c3aa13
-* author:	alphacraftstudios (https://sketchfab.com/alphacraftstudios)
+* title:	Clock
+* source:	https://sketchfab.com/3d-models/clock-c252b2c8b0e847959fde4cee6e94fb7f
+* author:	BillyJJackson (https://sketchfab.com/pistonstone)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Clock model" (https://sketchfab.com/3d-models/clock-model-a4de6d0954b44d8f8d738ba7d8c3aa13) by alphacraftstudios (https://sketchfab.com/alphacraftstudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Clock" (https://sketchfab.com/3d-models/clock-c252b2c8b0e847959fde4cee6e94fb7f) by BillyJJackson (https://sketchfab.com/pistonstone) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
